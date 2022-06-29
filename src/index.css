@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .sidebar-icon {
+        @apply relative flex items-center justify-center 
+               h-12 w-12 my-2 mx-auto
+             text-white bg-orange-500 hover:text-orange-200
+             dark:text-black dark:bg-orange-800 dark:hover:text-orange-600;
+    }
+
+    .sidebar-text {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14
+        rounded-md shadow-md text-white dark:text-black bg-orange-900 
+        text-xs font-bold transition-all duration-100 scale-0 origin-left
+    }
+    .input-container {
+        @apply mt-2 text-center border-b-2 focus-visible:border-b-orange-400
+        focus-visible:outline-0 dark:bg-black dark:text-white
+    }
+
+    .main {
+        @apply w-auto dark:bg-black dark:text-white bg-white text-black ml-16 grid grid-cols-4 grid-flow-row
+    }
+
+    .card {
+        @apply dark:bg-gray-900 bg-gray-300 dark:text-white text-black
+        m-10  w-auto h-max shadow-md rounded-md p-4 hover:bg-gray-800
+    }
+
+    .card h1{
+        @apply text-2xl font-bold
+    }
+
+    .card p{
+        @apply text-lg p-1
+    }
+    html {
+        @apply dark:bg-black dark:text-white;
+    }
+}
