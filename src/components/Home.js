@@ -7,7 +7,7 @@ class Home extends React.Component {
                 <div>
                     <Sidebar/>
                     <div className="main">
-                        
+                        <h1>Wilkommen</h1>
                     </div>
                 </div>
         )
