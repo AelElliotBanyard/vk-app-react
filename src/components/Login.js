@@ -1,6 +1,5 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './Home'
 import Open from './Open'
 import Mine from './Mine'
 import Person from './Person'
