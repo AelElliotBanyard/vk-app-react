@@ -13,7 +13,7 @@ class Login extends React.Component {
           error: "",
           username: "",
           password: "",
-          url: "http://localhost:8080",
+          url: "http://sfba-vkapp-api.herokuapp.com/",
         };
         this.handleCheckLogin = this.handleCheckLogin.bind(this);
         this.handleChangeUsername = this.handleChangeUsername.bind(this);

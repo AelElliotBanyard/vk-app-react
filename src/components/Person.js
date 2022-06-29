@@ -5,7 +5,7 @@ class Person extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-          url: "http://localhost:8080",
+          url: "http://sfba-vkapp-api.herokuapp.com/",
           personInfo: [""],
           tasks: [""],
           functions: [""],
