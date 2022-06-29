@@ -50,7 +50,7 @@ class Login extends React.Component {
             return (
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<Home username={this.state.username}/>}/>
+                        <Route path='/' element={<Open/>}/>
                         <Route path='/open' element={<Open/>}></Route>
                         <Route path='/mine' element={<Mine username={this.state.username}/>}></Route>
                         <Route path='/person' element={<Person username={this.state.username}/>}></Route>
