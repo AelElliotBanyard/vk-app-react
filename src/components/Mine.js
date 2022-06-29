@@ -5,7 +5,7 @@ class Mine extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-          url: "http://sfba-vkapp-api.herokuapp.com/",
+          url: "http://sfba-vkapp-api.herokuapp.com",
           deployments: [""],
           username: this.props.username,
           name: "",
