@@ -54,7 +54,7 @@ class Login extends React.Component {
                         <Route path='/vk-app-react/open' element={<Open/>}></Route>
                         <Route path='/vk-app-react/mine' element={<Mine username={this.state.username}/>}></Route>
                         <Route path='/vk-app-react/person' element={<Person username={this.state.username}/>}></Route>
-                        <Route path='/vk-app-react/*' element={<Navigate to="/" replace />}/>
+                        <Route path='/vk-app-react/*' element={<Navigate to="/vk-app-react/" replace />}/>
                     </Routes>
                 </BrowserRouter>
             );
