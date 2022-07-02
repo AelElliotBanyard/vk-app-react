@@ -49,6 +49,7 @@ class Login extends React.Component {
         if (this.state.authentication) {
             return (
                 <BrowserRouter>
+                <Home/>
                     <Routes>
                         <Route path='/' element={<Home/>}/>
                         <Route path='/open' element={<Open/>}></Route>
