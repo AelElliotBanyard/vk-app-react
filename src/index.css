@@ -26,7 +26,7 @@
 
     .card {
         @apply dark:bg-gray-900 bg-gray-300 dark:text-white text-black
-        m-10  w-auto h-max shadow-md rounded-md p-4 hover:bg-gray-800
+        m-10  w-auto h-max shadow-md rounded-md p-4 hover:bg-gray-400 hover:dark:bg-gray-800
     }
 
     .card h1{
