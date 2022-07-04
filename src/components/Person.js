@@ -10,6 +10,7 @@ class Person extends React.Component {
           tasks: [""],
           functions: [""],
           username: this.props.username,
+          user: this.props.user,
         }
     }
     componentDidMount(){

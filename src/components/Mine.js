@@ -8,6 +8,7 @@ class Mine extends React.Component {
           url: "https://sfba-vkapp-api.herokuapp.com",
           deployments: [""],
           username: this.props.username,
+          user: this.props.user,
           name: "",
           surname: ""
         }
