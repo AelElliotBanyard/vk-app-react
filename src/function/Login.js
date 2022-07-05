@@ -5,7 +5,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Home from '../components/Home'
 import Open from '../components/Open'
 import Mine from '../components/Mine'
-import Person from '../components/Person'
+import Person from '../function/Person'
 
 const firebaseConfig = {
     apiKey: "AIzaSyC19iPRnCt5tloEK0B0KYaDCSHH70w-3qU",
@@ -18,9 +18,9 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth = getAuth(firebaseApp);
 
 export default function Login() {
 
@@ -56,7 +56,7 @@ export default function Login() {
                     <Route path='/vk-app-react/' element={<Home/>}/>
                     <Route path='/vk-app-react/open' element={<Open/>}></Route>
                     <Route path='/vk-app-react/mine' element={<Mine username={username} user={user}/>}></Route>
-                    <Route path='/vk-app-react/person' element={<Person username={username} user={user}/>}></Route>
+                    <Route path='/vk-app-react/person' element={<Person/>}></Route>
                     <Route path='/vk-app-react/*' element={<Navigate to="/vk-app-react/" replace />}/>
                 </Routes>
             </BrowserRouter>
