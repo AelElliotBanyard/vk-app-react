@@ -1,5 +1,5 @@
 import Sidebar from "../components/Sidebar";
-import { getFirestore, collection, getDoc, where, query } from 'firebase/firestore'
+import { getFirestore, getDoc, doc } from 'firebase/firestore'
 import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
@@ -25,14 +25,15 @@ export default function Person() {
     const getData = () => {
         auth.onAuthStateChanged(user => {
             if (user) {
-                const q = query(collection(db, 'users'), where('uid', '==', user.uid))
-                getDoc(q)
+                const split = user.email.split(".");
+                const ref = doc(db, 'users', split[0].toString())
+                getDoc(ref)
                     .then(
                        (doc) => {
                             console.log(doc);
                             return (
                                 <div className='main ml-28 mt-10 flex flex-col'>
-                                    <p className='text-3xl font-extrabold mb-5'>{doc.firstname} {doc.name}, {doc.rank.short}</p>
+                                    <p className='text-3xl font-extrabold mb-5'>{doc.firstname} {doc.name}</p>
                                     <p className='text-2xl font-bold mb-5'>{doc.street} {doc.number}, {doc.areaCode} {doc.city}</p>
                                 </div>
                             )
