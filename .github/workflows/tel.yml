@@ -14,5 +14,3 @@ jobs:
           message: |
             Neuer Commit von ${{ github.actor }}:
             Commit Nachricht: ${{ github.event.commits[0].message }}
-            
-            Repository: ${{ github.repository }}
