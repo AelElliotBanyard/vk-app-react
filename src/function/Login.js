@@ -1,28 +1,13 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import { signInWithEmailAndPassword} from 'firebase/auth';
 import { useRef, useState } from "react";
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Home from '../components/Home'
 import Open from '../components/Open'
 import Mine from '../components/Mine'
 import Person from '../function/Person'
+import {auth} from '../firebase.config'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyC19iPRnCt5tloEK0B0KYaDCSHH70w-3qU",
-    authDomain: "vk-app-8400.firebaseapp.com",
-    projectId: "vk-app-8400",
-    storageBucket: "vk-app-8400.appspot.com",
-    messagingSenderId: "370078750720",
-    appId: "1:370078750720:web:6695f85d9817c2a9ee60e5",
-    measurementId: "G-7P195ZQG7F"
-  };
-  
-  // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-
-const auth = getAuth(firebaseApp);
-
-export default function Login() {
+function Login() {
 
     const [username , setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -56,7 +41,7 @@ export default function Login() {
                     <Route path='/vk-app-react/' element={<Home/>}/>
                     <Route path='/vk-app-react/open' element={<Open/>}></Route>
                     <Route path='/vk-app-react/mine' element={<Mine username={username} user={user}/>}></Route>
-                    <Route path='/vk-app-react/person' element={<Person/>}></Route>
+                    <Route path='/vk-app-react/person' element={<Person username={username}/>}></Route>
                     <Route path='/vk-app-react/*' element={<Navigate to="/vk-app-react/" replace />}/>
                 </Routes>
             </BrowserRouter>
@@ -73,3 +58,4 @@ export default function Login() {
     }
 }
 
+export default Login;
