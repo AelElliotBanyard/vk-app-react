@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword} from 'firebase/auth';
 import { useRef, useState } from "react";
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Home from '../components/Home'
-import Open from '../components/Open'
+import Open from '../function/Open'
 import Mine from '../components/Mine'
 import Person from '../function/Person'
 import {auth} from '../firebase.config'
