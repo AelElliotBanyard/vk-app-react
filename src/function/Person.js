@@ -1,9 +1,7 @@
 import Sidebar from "../function/Sidebar";
 import { getDocs, collection } from 'firebase/firestore';
-import { auth, db } from '../firebase.config';
+import { db } from '../firebase.config';
 import { useEffect, useState } from "react";
-import { signOut } from "firebase/auth";
-import { Link } from 'react-router-dom';
 
  function Person(props) {
     const [users, setUsers] = useState([])
@@ -21,17 +19,9 @@ import { Link } from 'react-router-dom';
         getPersonInfo();
     }, []);
 
-    const logout = () =>{
-        signOut(auth)
-        window.location.reload();
-    }
-
     return (
         <div>
             <Sidebar />
-            <div>
-                <button className="bg-orange-500 px-12 py-1 my-5 rounded-md text-white dark:text-black font-bold fixed top-2 right-5" onClick={() => logout()}><Link to="/vk-app-react/">Logout</Link></button>
-            </div>
                 {users.map((user) => {
                     if(user.firstname.toLowerCase() === name.toLowerCase() && user.name.toLowerCase() === lastname.toLowerCase()){
                         return (

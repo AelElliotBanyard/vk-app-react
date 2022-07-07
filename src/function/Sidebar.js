@@ -1,4 +1,4 @@
-import {FaCalendarPlus, FaUserCog, FaCalendar} from 'react-icons/fa';
+import {FaCalendarPlus, FaUserCog, FaCalendar, FaPowerOff} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -10,6 +10,7 @@ const Sidebar = () => {
             </div>
             <div className="fixed bottom-0 left-0 w-16 m-0 flex flex-col bg-orange-500 dark:bg-orange-800 text-white shadow-xl">
                 <Link to="/vk-app-react/person"><SidebarIcon icon={<FaUserCog size="28"/>} text="Personalien"/></Link> 
+                <Link to="/vk-app-react/" onClick={window.location.reload}><SidebarIcon icon={<FaPowerOff size="28"/>} text="Abmelden"/></Link> 
             </div>
         </div>
     );
