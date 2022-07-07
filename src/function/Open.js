@@ -1,7 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import {db} from '../firebase.config'
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../function/Sidebar";
 
 function Open(){
 
@@ -22,7 +22,8 @@ function Open(){
     return(
         <div>
             <Sidebar/>
-            <div className="main">
+            <div className="main flex flex-col">
+                <h1 className=" ml-10 mt-5 mb-10 dark:text-white text-black text-3xl font-bold">Freie Einsätze</h1>
                 {deployments.map((deployment) => {
                     if(deployment.complete === false){
                         return(

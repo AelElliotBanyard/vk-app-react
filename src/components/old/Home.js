@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../../function/Sidebar";
 
 class Home extends React.Component {
     render(){

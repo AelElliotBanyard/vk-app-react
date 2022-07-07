@@ -1,9 +1,9 @@
 import { signInWithEmailAndPassword} from 'firebase/auth';
 import { useRef, useState } from "react";
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-import Home from '../components/Home'
+import Home from '../function/Home'
 import Open from '../function/Open'
-import Mine from '../components/Mine'
+import Mine from '../function/Mine'
 import Person from '../function/Person'
 import {auth} from '../firebase.config'
 
@@ -11,7 +11,6 @@ function Login() {
 
     const [username , setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [user, setUser] = useState(null);
     const [validation, setValidation] = useState(false);
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
@@ -23,7 +22,6 @@ function Login() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setValidation(true)
-                setUser(userCredential.user);
             })
             .catch((error) => {
                 setValidation(false);
@@ -40,7 +38,7 @@ function Login() {
                 <Routes>
                     <Route path='/vk-app-react/' element={<Home/>}/>
                     <Route path='/vk-app-react/open' element={<Open/>}></Route>
-                    <Route path='/vk-app-react/mine' element={<Mine username={username} user={user}/>}></Route>
+                    <Route path='/vk-app-react/mine' element={<Mine username={username}/>}></Route>
                     <Route path='/vk-app-react/person' element={<Person username={username}/>}></Route>
                     <Route path='/vk-app-react/*' element={<Navigate to="/vk-app-react/" replace />}/>
                 </Routes>

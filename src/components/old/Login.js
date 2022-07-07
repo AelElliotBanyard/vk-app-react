@@ -1,10 +1,10 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-import Home from './Home'
+import Home from '../Home'
 import Open from './Open'
-import Mine from './Mine'
+import Mine from '../Mine'
 import Person from './Person'
-import LoginTest from '../function/Login'
+import LoginTest from '../../function/Login'
 
 class Login extends React.Component {
     constructor(props) {

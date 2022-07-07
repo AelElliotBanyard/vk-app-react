@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../function/Sidebar";
 import { getDocs, collection } from 'firebase/firestore';
 import { auth, db } from '../firebase.config';
 import { useEffect, useState } from "react";

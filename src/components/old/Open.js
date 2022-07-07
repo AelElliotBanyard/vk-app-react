@@ -1,5 +1,4 @@
-import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../function/Sidebar";
 
 class Open extends React.Component {
     constructor(props){
