@@ -39,4 +39,13 @@
     html {
         @apply dark:bg-black dark:text-white;
     }
+    .form {
+        @apply fixed right-0 top-0 h-screen bg-orange-900 px-10 w-72
+    }
+    .form-on {
+        @apply transition transform translate-x-0
+    }
+    .form-off {
+        @apply transition transform translate-x-full
+    }
 }
